@@ -1,0 +1,28 @@
+{
+    "name": "r3h6/form-frontend-validation",
+    "type": "typo3-cms-extension",
+    "description": "Adds frontend validation to form elements.",
+    "authors": [
+        {
+            "name": "R3 H6",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "R3H6\\FormFrontendValidation\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "R3H6\\FormFrontendValidation\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "r3h6/form-frontend-validation": "self.version",
+        "typo3-ter/form-frontend-validation": "self.version"
+    }
+}
