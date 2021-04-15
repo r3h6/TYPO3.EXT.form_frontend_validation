@@ -1,0 +1,9 @@
+page.includeJSFooterlibs {
+  parsley = //cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js
+  parsley {
+    external = 1
+    disableCompression = 1
+    excludeFromConcatenation = 1
+    integrity = sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==
+  }
+}

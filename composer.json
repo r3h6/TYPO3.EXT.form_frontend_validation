@@ -1,28 +1,42 @@
 {
-    "name": "r3h6/form-frontend-validation",
-    "type": "typo3-cms-extension",
-    "description": "Adds frontend validation to form elements.",
-    "authors": [
-        {
-            "name": "R3 H6",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "typo3/cms-core": "^10.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "R3H6\\FormFrontendValidation\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "R3H6\\FormFrontendValidation\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "r3h6/form-frontend-validation": "self.version",
-        "typo3-ter/form-frontend-validation": "self.version"
-    }
+	"name": "r3h6/form-frontend-validation",
+	"type": "typo3-cms-extension",
+	"description": "Adds frontend validation to form elements.",
+	"authors": [],
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin"
+	},
+	"require": {
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-form": "^10.4"
+	},
+	"require-dev": {
+		"saschaegerer/phpstan-typo3": "^0.13.1",
+		"friendsofphp/php-cs-fixer": "^2.18",
+		"typo3/coding-standards": "^0.2.0",
+		"helmich/typo3-typoscript-lint": "^2.4",
+		"phpmd/phpmd": "^2.9"
+	},
+	"autoload": {
+		"psr-4": {
+			"R3H6\\FormFrontendValidation\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"R3H6\\FormFrontendValidation\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"r3h6/form-frontend-validation": "self.version",
+		"typo3-ter/form-frontend-validation": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/web",
+			"extension-key": "form_frontend_validation"
+		}
+	}
 }

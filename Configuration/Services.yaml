@@ -6,12 +6,3 @@ services:
 
   R3H6\FormFrontendValidation\:
     resource: '../Classes/*'
-
-  R3H6\FormFrontendValidation\Hook\FormRenderableHook:
-    public: true
-
-  R3H6\FormFrontendValidation\EventListener\Html5Required:
-    tags:
-      - name: event.listener
-        identifier: html5Required
-        event: R3H6\FormFrontendValidation\Event\AppendFrontendValidationEvent

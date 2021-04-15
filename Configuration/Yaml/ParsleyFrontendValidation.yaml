@@ -1,0 +1,50 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            AdvancedPassword:
+              renderingOptions:
+                frontendValidation:
+                  1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyAdvancedPassword
+            Form:
+              renderingOptions:
+                fluidAdditionalAttributes:
+                  data-parsley-validate: 'true'
+          validatorsDefinition:
+            Alphanumeric:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyAlphanumericValidator
+            Count:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyCountValidator
+            DateRange:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyDateRangeValidator
+            EmailAddress:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyEmailAddressValidator
+            Float:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyFloatValidator
+            Integer:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyIntegerValidator
+            NotEmpty:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNotEmptyValidator
+            NumberRange:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNumberRangeValidator
+            Number:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNumberValidator
+            RegularExpression:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyRegularExpressionValidator
+            StringLength:
+              frontendValidation:
+                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyStringLengthValidator
+
+

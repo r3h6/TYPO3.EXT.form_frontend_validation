@@ -1,0 +1,7 @@
+plugin.tx_form {
+  settings {
+    yamlConfigurations {
+      1597947000002 = EXT:form_frontend_validation/Configuration/Yaml/ParsleyFrontendValidation.yaml
+    }
+  }
+}
