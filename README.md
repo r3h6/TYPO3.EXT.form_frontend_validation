@@ -1,7 +1,22 @@
 # form_frontend_validation
 
-Adds frontend validation to form elements.
-Requires the [Parsley](https://parsleyjs.org/) JavaScript form validation library.
+Frontend validation for the TYPO3 form framework.
+
+Adds data attributes to form elements for the [Parsley](https://parsleyjs.org/) JavaScript form validation library.<br>
+Currently implemented validators:
+- AdvancedPassword
+- AlphanumericValidator
+- CountValidator
+- DateRangeValidator
+- EmailAddressValidator
+- FloatValidator
+- IntegerValidator
+- NotEmptyValidator
+- NumberRangeValidator
+- NumberValidator
+- RegularExpressionValidator
+- StringLengthValidator
+
 
 ## Installation
 
@@ -16,3 +31,8 @@ Include in your TypoScript template following static templates:
 - Form Validation "Parsley JavaScript" _(Optional)_
 - Form Validation "Parsley Styles" _(Optional)_
 
+New template paths will be added to the form framework on key 11.
+If you changed the form field partial template you must add following HTML code to your partial:
+```html
+<span id="{element.uniqueIdentifier}-errors" class="error help-block"></span>
+```

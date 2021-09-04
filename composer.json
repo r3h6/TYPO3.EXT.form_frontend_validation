@@ -1,7 +1,7 @@
 {
 	"name": "r3h6/form-frontend-validation",
 	"type": "typo3-cms-extension",
-	"description": "Adds frontend validation to form elements.",
+	"description": "Frontend validation for the TYPO3 form framework.",
 	"authors": [],
 	"config": {
 		"vendor-dir": ".Build/vendor",
@@ -38,5 +38,22 @@
 			"web-dir": ".Build/web",
 			"extension-key": "form_frontend_validation"
 		}
+	},
+	"scripts": {
+		"ci:php:md": [
+			"phpmd Classes/ text phpmd-ruleset.xml"
+		],
+		"ci:php:cs": [
+			"php-cs-fixer fix -v --dry-run --using-cache false --diff --diff-format=udiff"
+		],
+		"ci:php:stan": [
+			"phpstan analyse"
+		],
+		"ci:ts:lint": [
+			"typoscript-lint -c typoscript-lint.yml --ansi -n --fail-on-warnings -vvv"
+		],
+		"fix:php:cs": [
+			"php-cs-fixer fix"
+		]
 	}
 }

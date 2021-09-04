@@ -7,44 +7,50 @@ TYPO3:
             AdvancedPassword:
               renderingOptions:
                 frontendValidation:
-                  1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyAdvancedPassword
+                  1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\AdvancedPassword
             Form:
               renderingOptions:
+                templateRootPaths:
+                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Templates/'
+                partialRootPaths:
+                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Partials/'
+                layoutRootPaths:
+                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Layouts/'
                 fluidAdditionalAttributes:
-                  data-parsley-validate: 'true'
+                  data-parsley-validate: ''
           validatorsDefinition:
             Alphanumeric:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyAlphanumericValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\AlphanumericValidator
             Count:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyCountValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\CountValidator
             DateRange:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyDateRangeValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\DateRangeValidator
             EmailAddress:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyEmailAddressValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\EmailAddressValidator
             Float:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyFloatValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\FloatValidator
             Integer:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyIntegerValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\IntegerValidator
             NotEmpty:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNotEmptyValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\NotEmptyValidator
             NumberRange:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNumberRangeValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\NumberRangeValidator
             Number:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyNumberValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\NumberValidator
             RegularExpression:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyRegularExpressionValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\RegularExpressionValidator
             StringLength:
               frontendValidation:
-                1597947000002: R3H6\FormFrontendValidation\Validation\ParsleyStringLengthValidator
+                1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\StringLengthValidator
 
 

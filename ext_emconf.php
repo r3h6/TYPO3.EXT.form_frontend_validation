@@ -13,10 +13,10 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Form Frontend Validation',
     'description' => 'Adds frontend validation to form elements.',
-    'category' => 'plugin',
+    'category' => 'fe',
     'author' => 'R3 H6',
     'author_email' => 'r3h6@outlook.com',
-    'state' => 'alpha',
+    'state' => 'beta',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
     'version' => '1.0.0',

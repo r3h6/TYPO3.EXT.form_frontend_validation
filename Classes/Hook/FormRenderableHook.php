@@ -3,7 +3,6 @@
 namespace R3H6\FormFrontendValidation\Hook;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
-use R3H6\FormFrontendValidation\Event\AppendFrontendValidationEvent;
 use R3H6\FormFrontendValidation\Validation\FrontendValidatorInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
@@ -12,12 +11,12 @@ use TYPO3\CMS\Form\Domain\Runtime\FormRuntime;
 
 /***
  *
- * This file is part of the "OAuth2 Server" Extension for TYPO3 CMS.
+ * This file is part of the "Form Frontend Validation" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2020
+ *  (c) 2021
  *
  ***/
 
