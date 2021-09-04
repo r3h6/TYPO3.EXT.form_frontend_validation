@@ -33,7 +33,8 @@ class CountValidator implements FrontendValidatorInterface
         if ($options['minimum'] && $options['maximum']) {
             FormElementUtility::addAttribute($formElement, 'data-parsley-mincheck', $options['minimum']);
             FormElementUtility::addAttribute($formElement, 'data-parsley-maxcheck', $options['maximum']);
-            FormElementUtility::addAttribute($formElement, 'data-parsley-check-message', FormElementUtility::getErrorMessage($formElement, 1475002994, [$options['minimum'], $options['maximum']]));
+            FormElementUtility::addAttribute($formElement, 'data-parsley-mincheck-message', FormElementUtility::getErrorMessage($formElement, 1475002994, [$options['minimum'], $options['maximum']]));
+            FormElementUtility::addAttribute($formElement, 'data-parsley-maxcheck-message', FormElementUtility::getErrorMessage($formElement, 1475002994, [$options['minimum'], $options['maximum']]));
         } elseif ($options['minimum']) {
             FormElementUtility::addAttribute($formElement, 'data-parsley-mincheck', $options['minimum']);
             FormElementUtility::addAttribute($formElement, 'data-parsley-mincheck-message', FormElementUtility::getErrorMessage($formElement, 1475002994, [$options['minimum'], '∞']));
