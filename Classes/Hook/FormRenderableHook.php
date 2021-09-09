@@ -49,6 +49,7 @@ class FormRenderableHook
             foreach ($renderable->getValidators() as $validator) {
                 $className = get_class($validator);
                 if (isset($availableFrontendValidators[$className])) {
+                    // @phpstan-ignore-next-line because false interpretation in PHP 7.3
                     $frontendValidator = GeneralUtility::makeInstance($availableFrontendValidators[$className]);
                     if ($frontendValidator instanceof FrontendValidatorInterface) {
                         $frontendValidator($renderable, $validator);
@@ -57,6 +58,7 @@ class FormRenderableHook
             }
             $frontendValidation = $renderable->getRenderingOptions()['frontendValidation'] ?? [];
             foreach ($frontendValidation as $className) {
+                // @phpstan-ignore-next-line because false interpretation in PHP 7.3
                 $frontendValidator = GeneralUtility::makeInstance($className);
                 if (is_callable($frontendValidator)) {
                     $frontendValidator($renderable);
