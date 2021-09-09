@@ -20,3 +20,6 @@ export ROOT_DIR=`readlink -f ${PWD}/../../`
 export HOST_UID=`id -u`
 
 docker-compose run "$@"
+SUITE_EXIT_CODE=$?
+docker-compose down
+exit $SUITE_EXIT_CODE
