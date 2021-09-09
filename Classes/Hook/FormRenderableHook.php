@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace R3H6\FormFrontendValidation\Hook;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
@@ -82,24 +84,4 @@ class FormRenderableHook
         }
         return static::$availableFrontendValidators;
     }
-
-    // protected function enhanceWithValidation(FormElementInterface $formElement)
-    // {
-    //     foreach ($formElement->getValidators() as $validator) {
-    //         $validatorClassName = get_class($validator);
-
-    //         if (isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][self::EXTENSION_KEY]['frontendValidators'][$validatorClassName])) {
-    //             $frontendValidators = $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][self::EXTENSION_KEY]['frontendValidators'][$validatorClassName];
-    //             ksort($frontendValidators, SORT_NUMERIC);
-    //             foreach ($frontendValidators as $className) {
-    //                 /* @var Frappant\FrpFormFrontendValidation\Validation\Frontend\FrontendValidator $validator */
-    //                 $frontendValidator = GeneralUtility::makeInstance($className);
-    //                 if ($frontendValidator instanceof FrontendValidator) {
-    //                     $frontendValidator->enhance($formElement, $validator);
-    //                     break;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace R3H6\FormFrontendValidation\Utility;
 
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
