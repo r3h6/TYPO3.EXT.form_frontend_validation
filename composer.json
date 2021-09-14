@@ -8,15 +8,17 @@
 		"bin-dir": ".Build/bin"
 	},
 	"require": {
-		"typo3/cms-core": "^10.4",
-		"typo3/cms-form": "^10.4"
+		"php": ">= 7.2, < 7.5",
+		"typo3/cms-core": "^9.5 || ^10.4 || ^11.0",
+		"typo3/cms-form": "^9.5 || ^10.4 || ^11.0"
 	},
 	"require-dev": {
 		"saschaegerer/phpstan-typo3": "^0.13.1",
 		"friendsofphp/php-cs-fixer": "^2.18",
 		"typo3/coding-standards": "^0.2.0",
 		"helmich/typo3-typoscript-lint": "^2.4",
-		"phpmd/phpmd": "^2.9"
+		"phpmd/phpmd": "^2.9",
+		"nimut/testing-framework": "6.x-dev"
 	},
 	"autoload": {
 		"psr-4": {
@@ -54,6 +56,12 @@
 		],
 		"ci:ts:lint": [
 			"typoscript-lint -c typoscript-lint.yml --ansi -n --fail-on-warnings -vvv"
+		],
+		"ci:test:unit": [
+			"phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/"
+		],
+		"ci:test:functional": [
+			"phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml Tests/Functional/"
 		],
 		"fix:php:cs": [
 			"php-cs-fixer fix"

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace R3H6\FormFrontendValidation\Hook;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
 use R3H6\FormFrontendValidation\Validation\FrontendValidatorInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
@@ -31,16 +30,6 @@ class FormRenderableHook
      * @var array<string, string>
      */
     protected static $availableFrontendValidators;
-
-    /**
-     * @var \Psr\EventDispatcher\EventDispatcherInterface
-     */
-    protected $eventDispatcher;
-
-    public function injectEventDispatcher(EventDispatcherInterface $eventDispatcher): void
-    {
-        $this->eventDispatcher = $eventDispatcher;
-    }
 
     public function beforeRendering(FormRuntime $formRuntime, RootRenderableInterface $renderable): void
     {
