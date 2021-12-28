@@ -5,7 +5,7 @@ cd "$THIS_SCRIPT_DIR" || exit 1
 cd ../Docker || exit 1
 
 export PHP=${PHP:-7.4}
-export DOCKER_PHP_IMAGE=`echo "php${PHP}" | sed -e 's/\.//'`
+export DOCKER_PHP_IMAGE=`echo "typo3/core-testing-php${PHP}" | sed -e 's/\.//'`
 export ROOT_DIR=`readlink -f ${PWD}/../../`
 export HOST_UID=`id -u`
 
@@ -21,8 +21,10 @@ case $SUITE in
         docker-compose run unit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml $ARGS
     ;;
     functional)
+        rm -rf .Build/web/typo3temp/var/tests/
         ARGS=${ARGS:-Tests/Functional/}
-        docker-compose run functional -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml $ARGS
+        ARGS="-c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml $ARGS"
+        docker-compose run functional $ARGS
     ;;
     *)
     echo "Invalid argument '$SUITE'"
@@ -31,5 +33,5 @@ case $SUITE in
 esac
 
 SUITE_EXIT_CODE=$?
-docker-compose down
+docker-compose down --remove-orphans
 exit $SUITE_EXIT_CODE

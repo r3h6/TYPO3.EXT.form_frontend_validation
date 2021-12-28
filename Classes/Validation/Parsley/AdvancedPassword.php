@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace R3H6\FormFrontendValidation\Validation\Parsley;
 
 use R3H6\FormFrontendValidation\Utility\FormElementUtility;
+use R3H6\FormFrontendValidation\Validation\FormElementFrontendValidatorInterface;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 
 /***
@@ -21,7 +22,7 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  /**
   * AdvancedPassword
   */
-class AdvancedPassword
+class AdvancedPassword implements FormElementFrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement): void
     {

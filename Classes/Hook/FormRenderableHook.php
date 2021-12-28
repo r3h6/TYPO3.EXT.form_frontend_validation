@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace R3H6\FormFrontendValidation\Hook;
 
+use R3H6\FormFrontendValidation\Validation\FormElementFrontendValidatorInterface;
 use R3H6\FormFrontendValidation\Validation\FrontendValidatorInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
@@ -49,7 +50,7 @@ class FormRenderableHook
             foreach ($frontendValidation as $className) {
                 // @phpstan-ignore-next-line because false interpretation in PHP 7.3
                 $frontendValidator = GeneralUtility::makeInstance($className);
-                if (is_callable($frontendValidator)) {
+                if ($frontendValidator instanceof FormElementFrontendValidatorInterface) {
                     $frontendValidator($renderable);
                 }
             }

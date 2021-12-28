@@ -2,7 +2,7 @@ version: '2.3'
 services:
 
   composer:
-    image: typo3gmbh/${DOCKER_PHP_IMAGE:?err}:latest
+    image: ${DOCKER_PHP_IMAGE:?err}
     user: ${HOST_UID:?err}
     volumes:
     - ${ROOT_DIR:?err}:${ROOT_DIR:?err}
@@ -12,7 +12,7 @@ services:
     entrypoint: composer
 
   unit:
-    image: typo3gmbh/${DOCKER_PHP_IMAGE:?err}:latest
+    image: ${DOCKER_PHP_IMAGE:?err}
     user: ${HOST_UID:?err}
     volumes:
     - ${ROOT_DIR:?err}:${ROOT_DIR:?err}
@@ -22,7 +22,7 @@ services:
     entrypoint: .Build/bin/phpunit
 
   functional:
-    image: typo3gmbh/${DOCKER_PHP_IMAGE:?err}:latest
+    image: ${DOCKER_PHP_IMAGE:?err}
     user: ${HOST_UID:?err}
     volumes:
     - ${ROOT_DIR:?err}:${ROOT_DIR:?err}

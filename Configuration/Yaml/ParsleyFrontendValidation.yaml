@@ -52,5 +52,3 @@ TYPO3:
             StringLength:
               frontendValidation:
                 1597947000002: R3H6\FormFrontendValidation\Validation\Parsley\StringLengthValidator
-
-
