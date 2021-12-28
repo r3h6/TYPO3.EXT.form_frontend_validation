@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Form Frontend Validation',
-    'description' => 'Adds frontend validation to form elements.',
+    'description' => 'Frontend validation for the TYPO3 form framework.',
     'category' => 'fe',
     'author' => 'R3 H6',
     'author_email' => 'r3h6@outlook.com',
@@ -22,7 +22,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-10.4.99',
+            'typo3' => '9.5.0-11.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
