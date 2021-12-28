@@ -16,9 +16,7 @@
 		"saschaegerer/phpstan-typo3": "^0.13.1",
 		"typo3/coding-standards": "^0.5",
 		"helmich/typo3-typoscript-lint": "^2.4",
-		"phpmd/phpmd": "^2.9",
-		"nimut/testing-framework": "^6.0",
-		"typo3/cms-fluid-styled-content": "^9.5 || ^10.4 || ^11.5"
+		"phpmd/phpmd": "^2.9"
 	},
 	"autoload": {
 		"psr-4": {
@@ -42,19 +40,11 @@
 		}
 	},
 	"scripts": {
-		"ci:php:cs": "php-cs-fixer fix -v --dry-run --using-cache false --diff --diff-format=udiff",
+		"ci:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php -v --dry-run --using-cache no --diff",
 		"ci:php:lint": "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
 		"ci:php:md": "phpmd Classes/ text phpmd-ruleset.xml",
 		"ci:php:stan": "phpstan analyse",
-		"ci:test:functional": "phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml Tests/Functional/",
-		"ci:test:unit": "phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/",
 		"ci:ts:lint": "typoscript-lint -c typoscript-lint.yml --ansi -n --fail-on-warnings -vvv",
-		"fix:php:cs": "php-cs-fixer fix",
-		"post-autoload-dump": [
-			"@prepare-extension-test-structure"
-		],
-		"prepare-extension-test-structure": [
-			"Nimut\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-		]
+		"fix:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php"
 	}
 }

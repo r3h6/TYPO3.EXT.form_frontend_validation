@@ -21,7 +21,7 @@ Currently implemented validators:
 ## Installation
 
 ```
-$ composer req r3h6/form-data
+$ composer req r3h6/form-frontend-validation
 ```
 
 ## Integration
