@@ -7,3 +7,10 @@ page.includeJSFooterlibs {
     integrity = sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==
   }
 }
+
+[typo3.branch == "9.5"]
+  page.jsFooterInline {
+    1640718066796 = TEXT
+    1640718066796.value = $('form').parsley();
+  }
+[end]
