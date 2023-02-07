@@ -20,9 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * FloatValidator
-  */
+/**
+ * FloatValidator
+ */
 class FloatValidator implements FrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void

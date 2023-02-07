@@ -19,9 +19,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * AdvancedPassword
-  */
+/**
+ * AdvancedPassword
+ */
 class AdvancedPassword implements FormElementFrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement): void

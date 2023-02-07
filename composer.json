@@ -2,21 +2,27 @@
 	"name": "r3h6/form-frontend-validation",
 	"type": "typo3-cms-extension",
 	"description": "Frontend validation for the TYPO3 form framework.",
+	"license": "GPL-2.0-or-later",
 	"authors": [],
 	"config": {
 		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin"
+		"bin-dir": ".Build/bin",
+		"allow-plugins": {
+			"typo3/cms-composer-installers": true,
+			"typo3/class-alias-loader": true
+		}
 	},
 	"require": {
-		"php": ">= 7.2, < 8.1",
+		"php": ">= 7.2, < 8.2",
 		"typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
 		"typo3/cms-form": "^9.5 || ^10.4 || ^11.5"
 	},
 	"require-dev": {
-		"saschaegerer/phpstan-typo3": "^0.13.1",
+		"saschaegerer/phpstan-typo3": "~1.1.0",
 		"typo3/coding-standards": "^0.5",
 		"helmich/typo3-typoscript-lint": "^2.4",
-		"phpmd/phpmd": "^2.9"
+		"phpmd/phpmd": "^2.9",
+		"nimut/testing-framework": "^6.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -29,7 +35,6 @@
 		}
 	},
 	"replace": {
-		"r3h6/form-frontend-validation": "self.version",
 		"typo3-ter/form-frontend-validation": "self.version"
 	},
 	"extra": {
@@ -41,10 +46,11 @@
 	},
 	"scripts": {
 		"ci:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php -v --dry-run --using-cache no --diff",
-		"ci:php:lint": "find *.php Classes Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
+		"ci:php:lint": "find *.php Classes/ Tests/ Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
 		"ci:php:md": "phpmd Classes/ text phpmd-ruleset.xml",
 		"ci:php:stan": "phpstan analyse",
 		"ci:ts:lint": "typoscript-lint -c typoscript-lint.yml --ansi -n --fail-on-warnings -vvv",
+		"ci:tests:unit": "phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/",
 		"fix:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php"
 	}
 }
