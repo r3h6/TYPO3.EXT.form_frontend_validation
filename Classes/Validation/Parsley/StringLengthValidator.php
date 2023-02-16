@@ -20,9 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * StringLengthValidator
-  */
+/**
+ * StringLengthValidator
+ */
 class StringLengthValidator implements FrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void

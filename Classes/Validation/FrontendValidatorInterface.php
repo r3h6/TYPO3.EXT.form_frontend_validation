@@ -18,9 +18,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * FrontendValidatorInterface
-  */
+/**
+ * FrontendValidatorInterface
+ */
 interface FrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void;

@@ -20,9 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * NotEmptyValidator
-  */
+/**
+ * NotEmptyValidator
+ */
 class NotEmptyValidator implements FrontendValidatorInterface
 {
     public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void

@@ -18,9 +18,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
- /**
-  * FormElementUtility
-  */
+/**
+ * FormElementUtility
+ */
 class FormElementUtility
 {
     /**
@@ -43,7 +43,7 @@ class FormElementUtility
         if (is_array($validationErrors)) {
             foreach ($validationErrors as $validationError) {
                 if ((int)$validationError['code'] === $code) {
-                    return vsprintf($validationError['message'], $arguments);
+                    return is_array($arguments) ? vsprintf($validationError['message'], $arguments) : $validationError['message'];
                 }
             }
         }
