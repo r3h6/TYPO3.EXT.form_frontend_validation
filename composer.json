@@ -13,16 +13,16 @@
 		}
 	},
 	"require": {
-		"php": ">= 7.2, < 8.2",
-		"typo3/cms-core": "^9.5 || ^10.4 || ^11.5",
-		"typo3/cms-form": "^9.5 || ^10.4 || ^11.5"
+		"php": ">= 7.2, < 8.3",
+		"typo3/cms-core": "^10.4 || ^11.5 || ^12.4",
+		"typo3/cms-form": "^10.4 || ^11.5 || ^12.4"
 	},
 	"require-dev": {
-		"saschaegerer/phpstan-typo3": "~1.1.0",
-		"typo3/coding-standards": "^0.5",
-		"helmich/typo3-typoscript-lint": "^2.4",
+		"saschaegerer/phpstan-typo3": "^1.8",
+		"typo3/coding-standards": "0.6.*",
+		"helmich/typo3-typoscript-lint": "^2.5 || ^3.1",
 		"phpmd/phpmd": "^2.9",
-		"nimut/testing-framework": "^6.0"
+		"typo3/testing-framework": "^6.16 || ^7.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -45,12 +45,12 @@
 		}
 	},
 	"scripts": {
-		"ci:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php -v --dry-run --using-cache no --diff",
+		"ci:php:cs": "PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --config .php-cs-fixer.php -v --dry-run --using-cache no --diff",
 		"ci:php:lint": "find *.php Classes/ Tests/ Configuration Tests -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
 		"ci:php:md": "phpmd Classes/ text phpmd-ruleset.xml",
 		"ci:php:stan": "phpstan analyse",
 		"ci:ts:lint": "typoscript-lint -c typoscript-lint.yml --ansi -n --fail-on-warnings -vvv",
-		"ci:tests:unit": "phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/",
+		"ci:tests:unit": "phpunit -c .Build/vendor/typo3/testing-framework/Resources/Core/Build/UnitTests.xml Tests/Unit/",
 		"fix:php:cs": "php-cs-fixer fix --config .php-cs-fixer.php"
 	}
 }
