@@ -7,6 +7,7 @@ namespace R3H6\FormFrontendValidation\Tests\Utility;
 use Generator;
 use R3H6\FormFrontendValidation\Utility\FormElementUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /***
  *
@@ -22,7 +23,7 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 /**
  * FormElementUtilityTest
  */
-class FormElementUtilityTest extends \Nimut\TestingFramework\TestCase\UnitTestCase
+class FormElementUtilityTest extends UnitTestCase
 {
     /**
      * @test
@@ -44,7 +45,7 @@ class FormElementUtilityTest extends \Nimut\TestingFramework\TestCase\UnitTestCa
     /**
      * @return Generator<int, (string|null)[]|(string|string[])[], mixed, void>
      */
-    public function getErrorMessageReturnsValidationErrorMessageProvider()
+    public static function getErrorMessageReturnsValidationErrorMessageProvider()
     {
         yield ['Foo %s bar', null, 'Foo %s bar'];
         yield ['Foo %s bar', ['bar'], 'Foo bar bar'];

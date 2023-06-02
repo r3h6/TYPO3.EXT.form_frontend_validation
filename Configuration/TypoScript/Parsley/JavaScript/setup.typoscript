@@ -9,8 +9,8 @@ page.includeJSFooterlibs {
 }
 
 [typo3.branch == "9.5"]
-  page.jsFooterInline {
-    1640718066796 = TEXT
-    1640718066796.value = $('form').parsley();
-  }
+page.jsFooterInline {
+  1640718066796 = TEXT
+  1640718066796.value = $('form').parsley();
+}
 [end]
