@@ -13,9 +13,9 @@
 		}
 	},
 	"require": {
-		"php": ">= 7.2, < 8.3",
-		"typo3/cms-core": "^10.4 || ^11.5 || ^12.4",
-		"typo3/cms-form": "^10.4 || ^11.5 || ^12.4"
+		"php": ">= 7.4, < 8.3",
+		"typo3/cms-core": "^11.5 || ^12.4",
+		"typo3/cms-form": "^11.5 || ^12.4"
 	},
 	"require-dev": {
 		"saschaegerer/phpstan-typo3": "^1.8",
