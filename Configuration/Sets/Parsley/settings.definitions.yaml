@@ -1,0 +1,26 @@
+categories:
+  FormFrontendValidation:
+    label: 'Form frontend validation'
+  FormFrontendValidation.assets:
+    label: 'Assets'
+    parent: FormFrontendValidation
+
+settings:
+  formFrontendValidation.parsley:
+    label: 'Parsley'
+    category: FormFrontendValidation.assets
+    description: 'Include parsley js from cdn'
+    type: bool
+    default: 1
+  formFrontendValidation.jquery:
+    label: 'jQuery'
+    category: FormFrontendValidation.assets
+    description: 'Include jQuery from cdn'
+    type: bool
+    default: 1
+  formFrontendValidation.styles:
+    label: 'Styles'
+    category: FormFrontendValidation.assets
+    description: 'Include default styles'
+    type: bool
+    default: 1

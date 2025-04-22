@@ -1,0 +1,230 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: example
+label: Example
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Your message: {subject}'
+      recipients:
+        your.company@example.com: 'Your Company name'
+      senderAddress: '{email-1}'
+      senderName: '{name}'
+      format: html
+      attachUploads: true
+      translation:
+        language: default
+      title: 'Confirmation of your message'
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    renderables:
+      -
+        type: Fieldset
+        identifier: fieldset-1
+        label: 'Basic elements'
+        renderables:
+          -
+            defaultValue: ''
+            identifier: name
+            label: 'Text min max'
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+                minlength: '5'
+                maxlength: '10'
+              elementDescription: 'Text must be between 5 and 10 chars.'
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                options:
+                  minimum: '5'
+                  maximum: '10'
+                identifier: StringLength
+          -
+            defaultValue: ''
+            type: Password
+            identifier: password-1
+            label: Password
+          -
+            defaultValue: ''
+            identifier: subject
+            label: Alphanumeric
+            type: Text
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: Subject
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                identifier: Alphanumeric
+          -
+            defaultValue: ''
+            identifier: message
+            label: 'Text max only'
+            type: Textarea
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: ''
+                required: required
+                minlength: '0'
+                maxlength: '1000'
+            validators:
+              -
+                identifier: NotEmpty
+              -
+                options:
+                  minimum: '0'
+                  maximum: '1000'
+                identifier: StringLength
+      -
+        type: Fieldset
+        identifier: fieldset-2
+        label: 'Special elements'
+        renderables:
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                min: '2023-01-01'
+                max: ''
+                step: 1
+            type: Date
+            identifier: date-1
+            label: Date
+            validators:
+              -
+                options:
+                  minimum: '2023-01-01'
+                  maximum: ''
+                identifier: DateRange
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                step: 1
+                min: '3'
+                max: '10'
+            type: Number
+            identifier: number-1
+            label: Number
+            validators:
+              -
+                identifier: Number
+              -
+                options:
+                  minimum: '3'
+                  maximum: '10'
+                identifier: NumberRange
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-1
+            label: Telephone
+            validators:
+              -
+                options:
+                  regularExpression: '/(\+41\s?|\b0) ?\d{2,3} ?\d{3} ?\d{2} ?\d{2}\b/'
+                identifier: RegularExpression
+          -
+            defaultValue: ''
+            type: Url
+            identifier: url-1
+            label: URL
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email-1
+            label: 'Email address'
+            validators:
+              -
+                identifier: EmailAddress
+      -
+        type: Fieldset
+        identifier: fieldset-3
+        label: 'Select elements'
+        renderables:
+          -
+            type: Checkbox
+            identifier: checkbox-1
+            label: Checkbox
+          -
+            type: CountrySelect
+            identifier: countryselect-1
+            label: 'Country select'
+          -
+            properties:
+              options:
+                Apple: Apple
+                Banana: Banana
+                Cherry: Cherry
+                Date: Date
+                Elderberry: Elderberry
+            type: MultiSelect
+            identifier: multiselect-1
+            label: 'Multi select'
+          -
+            properties:
+              options:
+                Apple: Apple
+                Banana: Banana
+                Cherry: Cherry
+            type: SingleSelect
+            identifier: singleselect-1
+            label: 'Single select'
+          -
+            properties:
+              options:
+                Apple: Apple
+                Banana: Banana
+                Cherry: Cherry
+                Date: Date
+                Elderberry: Elderberry
+            type: MultiCheckbox
+            identifier: multicheckbox-1
+            label: 'Checkbox 2-3'
+            validators:
+              -
+                options:
+                  minimum: '2'
+                  maximum: '3'
+                identifier: Count
+          -
+            properties:
+              options:
+                'Yes': 'Yes'
+                'No': 'No'
+            type: RadioButton
+            identifier: radiobutton-1
+            label: 'Radio button'
+          -
+            properties:
+              dateFormat: Y-m-d
+              enableDatePicker: false
+              displayTimeSelector: false
+            type: DatePicker
+            identifier: datepicker-1
+            label: 'Date picker'
+            validators:
+              -
+                identifier: DateTime
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: summarypage
+    label: 'Summary page'
+    type: SummaryPage

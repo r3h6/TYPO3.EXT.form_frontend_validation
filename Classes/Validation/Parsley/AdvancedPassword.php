@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace R3H6\FormFrontendValidation\Validation\Parsley;
 
 use R3H6\FormFrontendValidation\Utility\FormElementUtility;
-use R3H6\FormFrontendValidation\Validation\FormElementFrontendValidatorInterface;
+use R3H6\FormFrontendValidation\Validation\FrontendValidatorInterface;
+use TYPO3\CMS\Extbase\Validation\Validator\ValidatorInterface;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 
 /***
@@ -19,12 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * AdvancedPassword
- */
-class AdvancedPassword implements FormElementFrontendValidatorInterface
+final class AdvancedPassword implements FrontendValidatorInterface
 {
-    public function __invoke(FormElementInterface $formElement): void
+    public function __invoke(FormElementInterface $formElement, ?ValidatorInterface $validator = null): void
     {
         FormElementUtility::addAttribute($formElement, 'data-parsley-equalto', '#' . $formElement->getUniqueIdentifier() . '-confirmation');
         FormElementUtility::addAttribute($formElement, 'data-parsley-errors-container', '#' . $formElement->getUniqueIdentifier() . '-errors');

@@ -20,12 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * DateRangeValidator
- */
-class DateRangeValidator implements FrontendValidatorInterface
+final class DateRangeValidator implements FrontendValidatorInterface
 {
-    public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void
+    public function __invoke(FormElementInterface $formElement, ?ValidatorInterface $validator = null): void
     {
         $options = $validator->getOptions();
 

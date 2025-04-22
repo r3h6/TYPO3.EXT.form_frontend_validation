@@ -20,12 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * CountValidator
- */
-class CountValidator implements FrontendValidatorInterface
+final class CountValidator implements FrontendValidatorInterface
 {
-    public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void
+    public function __invoke(FormElementInterface $formElement, ?ValidatorInterface $validator = null): void
     {
         FormElementUtility::addAttribute($formElement, 'data-parsley-trigger', 'change');
         FormElementUtility::addAttribute($formElement, 'data-parsley-errors-container', '#' . $formElement->getUniqueIdentifier() . '-errors');
