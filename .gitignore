@@ -4,3 +4,5 @@
 /composer.lock
 /var/
 /.php-cs-fixer.cache
+**/*adminer*
+/config

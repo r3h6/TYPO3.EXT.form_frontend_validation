@@ -11,11 +11,11 @@ TYPO3:
             Form:
               renderingOptions:
                 templateRootPaths:
-                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Templates/'
+                  110: 'EXT:form_frontend_validation/Resources/Private/Parsley/Templates/'
                 partialRootPaths:
-                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Partials/'
+                  110: 'EXT:form_frontend_validation/Resources/Private/Parsley/Partials/'
                 layoutRootPaths:
-                  11: 'EXT:form_frontend_validation/Resources/Private/Parsley/Layouts/'
+                  110: 'EXT:form_frontend_validation/Resources/Private/Parsley/Layouts/'
                 fluidAdditionalAttributes:
                   data-parsley-validate: ''
           validatorsDefinition:

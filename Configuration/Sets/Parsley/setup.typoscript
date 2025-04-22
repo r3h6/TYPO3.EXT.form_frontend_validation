@@ -1,0 +1,9 @@
+@import 'EXT:form_frontend_validation/Configuration/TypoScript/Parsley/setup.typoscript'
+@import 'EXT:form_frontend_validation/Configuration/TypoScript/Parsley/JavaScript/setup.typoscript'
+@import 'EXT:form_frontend_validation/Configuration/TypoScript/Parsley/Styles/setup.typoscript'
+@import 'EXT:form_frontend_validation/Configuration/TypoScript/Parsley/jQuery/setup.typoscript'
+
+
+page.includeJSFooterlibs.parsley.if.isTrue = {$formFrontendValidation.parsley}
+page.includeJSFooterlibs.jquery.if.isTrue = {$formFrontendValidation.jquery}
+plugin.tx_formfrontendvalidation._CSS_DEFAULT_STYLE.if.isTrue = {$formFrontendValidation.styles}

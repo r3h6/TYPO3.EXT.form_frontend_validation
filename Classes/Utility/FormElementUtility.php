@@ -18,10 +18,7 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * FormElementUtility
- */
-class FormElementUtility
+final class FormElementUtility
 {
     /**
      * @param mixed $value

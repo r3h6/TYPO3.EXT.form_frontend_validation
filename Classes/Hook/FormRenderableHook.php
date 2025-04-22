@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace R3H6\FormFrontendValidation\Hook;
 
-use R3H6\FormFrontendValidation\Validation\FormElementFrontendValidatorInterface;
 use R3H6\FormFrontendValidation\Validation\FrontendValidatorInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
@@ -22,10 +21,7 @@ use TYPO3\CMS\Form\Domain\Runtime\FormRuntime;
  *
  ***/
 
-/**
- * FormRenderableHook
- */
-class FormRenderableHook
+final class FormRenderableHook
 {
     /**
      * @var array<string, string>
@@ -37,20 +33,19 @@ class FormRenderableHook
         if ($renderable instanceof FormElementInterface) {
             $availableFrontendValidators = $this->getAvailableFrontendValidators($formRuntime);
             foreach ($renderable->getValidators() as $validator) {
-                $className = get_class($validator);
-                if (isset($availableFrontendValidators[$className])) {
-                    // @phpstan-ignore-next-line because false interpretation in PHP 7.3
-                    $frontendValidator = GeneralUtility::makeInstance($availableFrontendValidators[$className]);
+                $className = $availableFrontendValidators[get_class($validator)] ?? null;
+                if ($className !== null) {
+                    $frontendValidator = GeneralUtility::makeInstance($className);
                     if ($frontendValidator instanceof FrontendValidatorInterface) {
                         $frontendValidator($renderable, $validator);
                     }
                 }
             }
+            /** @var class-string<object>[] $frontendValidation */
             $frontendValidation = $renderable->getRenderingOptions()['frontendValidation'] ?? [];
             foreach ($frontendValidation as $className) {
-                // @phpstan-ignore-next-line because false interpretation in PHP 7.3
                 $frontendValidator = GeneralUtility::makeInstance($className);
-                if ($frontendValidator instanceof FormElementFrontendValidatorInterface) {
+                if ($frontendValidator instanceof FrontendValidatorInterface) {
                     $frontendValidator($renderable);
                 }
             }
@@ -58,7 +53,7 @@ class FormRenderableHook
     }
 
     /**
-     * @return array<string, string>
+     * @phpstan-return array<string, class-string<object>>
      */
     protected function getAvailableFrontendValidators(FormRuntime $formRuntime): array
     {
@@ -68,7 +63,7 @@ class FormRenderableHook
             foreach ($validatorsDefinition as $validatorDefinition) {
                 if (isset($validatorDefinition['frontendValidation'])) {
                     foreach ((array)$validatorDefinition['frontendValidation'] as $className) {
-                        $validators[(string)$validatorDefinition['implementationClassName']] = (string)$className;
+                        $validators[(string)$validatorDefinition['implementationClassName']] = $className;
                     }
                 }
             }

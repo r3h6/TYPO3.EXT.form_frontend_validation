@@ -20,12 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * NotEmptyValidator
- */
-class NotEmptyValidator implements FrontendValidatorInterface
+final class NotEmptyValidator implements FrontendValidatorInterface
 {
-    public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void
+    public function __invoke(FormElementInterface $formElement, ?ValidatorInterface $validator = null): void
     {
         FormElementUtility::addAttribute($formElement, 'data-parsley-trigger', 'change');
         FormElementUtility::addAttribute($formElement, 'data-parsley-errors-container', '#' . $formElement->getUniqueIdentifier() . '-errors');

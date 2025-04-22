@@ -20,12 +20,9 @@ use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
  *
  ***/
 
-/**
- * RegularExpressionValidator
- */
-class RegularExpressionValidator implements FrontendValidatorInterface
+final class RegularExpressionValidator implements FrontendValidatorInterface
 {
-    public function __invoke(FormElementInterface $formElement, ValidatorInterface $validator): void
+    public function __invoke(FormElementInterface $formElement, ?ValidatorInterface $validator = null): void
     {
         FormElementUtility::addAttribute($formElement, 'data-parsley-trigger', 'change');
         FormElementUtility::addAttribute($formElement, 'data-parsley-errors-container', '#' . $formElement->getUniqueIdentifier() . '-errors');

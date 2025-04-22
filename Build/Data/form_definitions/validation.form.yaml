@@ -1,0 +1,232 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: validation
+label: Validation
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-1
+            label: 'Text required'
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: ''
+              fluidAdditionalAttributes:
+                required: required
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-2
+            label: 'String length 0 - 10'
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: ''
+              fluidAdditionalAttributes:
+                minlength: '0'
+                maxlength: '10'
+            validators:
+              -
+                options:
+                  minimum: '0'
+                  maximum: '10'
+                identifier: StringLength
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-3
+            label: 'String length 5 - 10'
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: ''
+              fluidAdditionalAttributes:
+                minlength: '5'
+                maxlength: '10'
+            validators:
+              -
+                options:
+                  minimum: '5'
+                  maximum: '10'
+                identifier: StringLength
+      -
+        type: GridRow
+        identifier: gridrow-2
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-5
+            label: 'Text validate alpahnumeric'
+            properties:
+              fluidAdditionalAttributes:
+                minlength: '5'
+                maxlength: '10'
+              elementDescription: 'Validate string length 5 - 10'
+            validators:
+              -
+                identifier: Alphanumeric
+              -
+                options:
+                  minimum: '5'
+                  maximum: '10'
+                identifier: StringLength
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-6
+            label: 'Text validate e-mail'
+            validators:
+              -
+                identifier: EmailAddress
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-7
+            label: 'Text validate regex'
+            validators:
+              -
+                options:
+                  regularExpression: /zzz/
+                identifier: RegularExpression
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-4
+            label: 'Text validate integer'
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: ''
+            validators:
+              -
+                identifier: Integer
+          -
+            defaultValue: ''
+            type: Text
+            identifier: text-8
+            label: 'Text validate float'
+            validators:
+              -
+                identifier: Float
+      -
+        type: GridRow
+        identifier: gridrow-3
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email-1
+            label: 'Email address'
+            validators:
+              -
+                identifier: EmailAddress
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: telephone-1
+            label: 'Telephone number'
+          -
+            defaultValue: ''
+            type: Url
+            identifier: url-1
+            label: URL
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                step: 1
+                min: '5'
+                max: '10'
+              elementDescription: 'Validate number range'
+            type: Number
+            identifier: number-1
+            label: Number
+            validators:
+              -
+                identifier: Number
+              -
+                options:
+                  minimum: '5'
+                  maximum: '10'
+                identifier: NumberRange
+      -
+        type: GridRow
+        identifier: gridrow-4
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                min: ''
+                max: '2024-11-31'
+                step: 1
+              validationErrorMessages:
+                -
+                  code: 1521293685
+                  message: 'yes'
+                -
+                  code: 1521293686
+                  message: 'yes'
+                -
+                  code: 1521293687
+                  message: 'yes'
+            type: Date
+            identifier: date-1
+            label: 'Date with range validator'
+            validators:
+              -
+                options:
+                  minimum: ''
+                  maximum: '2024-11-31'
+                identifier: DateRange
+          -
+            properties:
+              options:
+                Apple: Apple
+                Banana: Banana
+                Cherry: Cherry
+                Date: Date
+            type: MultiCheckbox
+            identifier: multicheckbox-1
+            label: 'Multi checkbox'
+            validators:
+              -
+                options:
+                  minimum: '2'
+                  maximum: '3'
+                identifier: Count
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: SummaryPage
+    identifier: summarypage-1
+    label: 'Summary step'

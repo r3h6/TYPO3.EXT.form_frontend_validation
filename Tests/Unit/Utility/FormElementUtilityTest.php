@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace R3H6\FormFrontendValidation\Tests\Utility;
 
-use Generator;
 use R3H6\FormFrontendValidation\Utility\FormElementUtility;
 use TYPO3\CMS\Form\Domain\Model\FormElements\FormElementInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
@@ -43,7 +42,7 @@ class FormElementUtilityTest extends UnitTestCase
     }
 
     /**
-     * @return Generator<int, (string|null)[]|(string|string[])[], mixed, void>
+     * @return \Generator<int, (string|null)[]|(string|string[])[], mixed, void>
      */
     public static function getErrorMessageReturnsValidationErrorMessageProvider()
     {
